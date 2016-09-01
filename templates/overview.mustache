@@ -1,13 +1,22 @@
 
 <div class="reportSection">
+  <h4>Description</h4>
+  <div>
+    <p>
+    {{DESC}}
+    </p>
+  </div>
+</div>
+<div class="reportSection tableContainer">
   <h4>Designated Areas</h4>
-    <div class="tab-pane" id="dataTable">
-      <table>
+    <div>
+      <table data-paging="20">
         <thead>
           <tr>
             <th>Name</th>
             <th>Designate</th>
             <th>IUCN Category</th>
+            <th style="width:50px;">Area (sq. km.)</th>
           </tr>
         </thead>
         <tbody>
@@ -16,9 +25,11 @@
               <td>{{SITE_NAME}}</td>
               <td>{{DESIGNATE}}</td>
               <td>{{IUCNCAT}}</td>
+              <td>{{AREA_SQKM}}</td>
             </tr>
           {{/areas}}
         </tbody>
       </table>
-    </div>
+
+
 </div>
