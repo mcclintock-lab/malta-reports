@@ -19,10 +19,16 @@ class OverviewTab extends ReportTab
     areas = @recordSet('DesignatedAreasToolbox', 'DesignatedAreas').toArray()
     @roundData areas
 
+    no_desc=false
+    desc="No description was given"
     if areas?.length > 0
       desc = areas[0].DESC_
+
+      if desc.trim().length == 0
+        no_desc = true
+
     else
-      desc = "No description given"
+      no_desc=true
 
     # setup context object with data and render the template from it
     context =
@@ -32,6 +38,7 @@ class OverviewTab extends ReportTab
       admin: @project.isAdmin window.user
       areas: areas
       DESC: desc
+      no_desc:no_desc
     
     @$el.html @template.render(context, templates)
     @enableLayerTogglers()

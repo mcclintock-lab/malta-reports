@@ -2,9 +2,16 @@
 <div class="reportSection">
   <h4>Description</h4>
   <div>
-    <p>
-    {{DESC}}
-    </p>
+    {{#no_desc}}
+      <p style="font-style:italic;color:gray">
+      No description was given
+      </p>
+    {{/no_desc}}
+    {{^no_desc}}
+      <p>
+      {{DESC}}
+      </p>
+    {{/no_desc}}
   </div>
 </div>
 <div class="reportSection tableContainer">
